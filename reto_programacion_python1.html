@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego Interactivo para Aprender Python. Elaborado por : Msc. alejandra C. Montaña A.</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .instruccion {
+      background: #ffffff;
+      border-left: 5px solid #4CAF50;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .instruccion p {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+      font-family: 'Courier New', monospace;
+      resize: vertical;
+      background-color: #fefefe;
+    }
+
+    button {
+      background: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .instruccion div {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .correcto {
+      color: green;
+    }
+
+    .incorrecto {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Juego Interactivo para Aprender Python</h1>
+
+<!-- CONTENIDO DE LOS RETOS A CONTINUACIÓN -->
+
+<!-- RETOS DEL 1 AL 8 -->
+
+<!-- Reto 1a -->
+<div class="instruccion">
+  <p><strong>Reto 1a:</strong> Crea una variable llamada <code>nombre</code> y asígnale tu nombre como texto. Ejemplo: <code>nombre = "Ana"</code></p>
+  <textarea id="codigoUsuario1a"></textarea>
+  <button onclick="verificarCodigo1a()">Verificar código</button>
+  <div id="resultado1a"></div>
+</div>
+
+<!-- Reto 1b -->
+<div class="instruccion">
+  <p><strong>Reto 1b:</strong> Crea una variable llamada <code>edad</code> y asígnale tu edad como número entero. Ejemplo: <code>edad = 20</code></p>
+  <textarea id="codigoUsuario1b"></textarea>
+  <button onclick="verificarCodigo1b()">Verificar código</button>
+  <div id="resultado1b"></div>
+</div>
+
+<!-- Reto 1c -->
+<div class="instruccion">
+  <p><strong>Reto 1c:</strong> Crea una variable llamada <code>altura</code> con tu altura en metros (número decimal). Ejemplo: <code>altura = 1.65</code></p>
+  <textarea id="codigoUsuario1c"></textarea>
+  <button onclick="verificarCodigo1c()">Verificar código</button>
+  <div id="resultado1c"></div>
+</div>
+
+<!-- Reto 1d -->
+<div class="instruccion">
+  <p><strong>Reto 1d:</strong> Crea una variable booleana llamada <code>es_estudiante</code>. Ejemplo: <code>es_estudiante = True</code></p>
+  <textarea id="codigoUsuario1d"></textarea>
+  <button onclick="verificarCodigo1d()">Verificar código</button>
+  <div id="resultado1d"></div>
+</div>
+
+<!-- Reto 2 -->
+<div class="instruccion">
+  <p><strong>Reto 2:</strong> Crea una variable llamada <code>ciudad</code> y luego imprímela usando <code>print()</code>.</p>
+  <textarea id="codigoUsuario2"></textarea>
+  <button onclick="verificarCodigo2()">Verificar código</button>
+  <div id="resultado2"></div>
+</div>
+
+<!-- Reto 3 -->
+<div class="instruccion">
+  <p><strong>Reto 3:</strong> Crea dos variables numéricas (<code>a</code> y <code>b</code>) y muestra su suma con <code>print(a + b)</code>.</p>
+  <textarea id="codigoUsuario3"></textarea>
+  <button onclick="verificarCodigo3()">Verificar código</button>
+  <div id="resultado3"></div>
+</div>
+
+<!-- Reto 4 -->
+<div class="instruccion">
+  <p><strong>Reto 4:</strong> Usa una f-string para imprimir tu nombre con <code>print(f"Hola, mi nombre es {nombre}")</code>.</p>
+  <textarea id="codigoUsuario4"></textarea>
+  <button onclick="verificarCodigo4()">Verificar código</button>
+  <div id="resultado4"></div>
+</div>
+
+<!-- Reto 5 -->
+<div class="instruccion">
+  <p><strong>Reto 5:</strong> Crea dos variables decimales (<code>x</code> y <code>y</code>) y muestra su multiplicación con <code>print(x * y)</code>.</p>
+  <textarea id="codigoUsuario5"></textarea>
+  <button onclick="verificarCodigo5()">Verificar código</button>
+  <div id="resultado5"></div>
+</div>
+
+<!-- Reto 6 -->
+<div class="instruccion">
+  <p><strong>Reto 6:</strong> Imprime el resultado de una resta decimal usando <code>format()</code>. Ejemplo: <code>precio = 100.0</code>, <code>descuento = 20.0</code>, <code>print("El precio final es: {:.2f}".format(precio - descuento))</code></p>
+  <textarea id="codigoUsuario6"></textarea>
+  <button onclick="verificarCodigo6()">Verificar código</button>
+  <div id="resultado6"></div>
+</div>
+
+<!-- Reto 7 -->
+<div class="instruccion">
+  <p><strong>Reto 7:</strong> Crea una lista llamada <code>frutas</code> con al menos tres elementos. Luego imprime el segundo elemento.</p>
+  <textarea id="codigoUsuario7"></textarea>
+  <button onclick="verificarCodigo7()">Verificar código</button>
+  <div id="resultado7"></div>
+</div>
+
+<!-- Reto 8 -->
+<div class="instruccion">
+  <p><strong>Reto 8:</strong> Crea un diccionario llamado <code>persona</code> con claves <code>nombre</code>, <code>edad</code> y <code>ciudad</code>. Luego imprime el valor de la clave <code>nombre</code>.</p>
+  <textarea id="codigoUsuario8"></textarea>
+  <button onclick="verificarCodigo8()">Verificar código</button>
+  <div id="resultado8"></div>
+</div>
+
+<script>
+function mostrarResultado(id, mensaje, correcto) {
+  const resultado = document.getElementById(id);
+  resultado.innerText = mensaje;
+  resultado.className = correcto ? "correcto" : "incorrecto";
+}
+
+function verificarCodigo1a() {
+  const codigo = document.getElementById("codigoUsuario1a").value;
+  const regex = /^nombre\s*=\s*\"[a-zA-Z\s]+\"$/m;
+  mostrarResultado("resultado1a", regex.test(codigo) ? "¡Correcto!" : "Revisa la sintaxis: nombre = \"TuNombre\"", regex.test(codigo));
+}
+
+function verificarCodigo1b() {
+  const codigo = document.getElementById("codigoUsuario1b").value;
+  const regex = /^edad\s*=\s*\d+$/m;
+  mostrarResultado("resultado1b", regex.test(codigo) ? "¡Correcto!" : "Revisa la sintaxis: edad = 20", regex.test(codigo));
+}
+
+function verificarCodigo1c() {
+  const codigo = document.getElementById("codigoUsuario1c").value;
+  const regex = /^altura\s*=\s*\d+(\.\d+)?$/m;
+  mostrarResultado("resultado1c", regex.test(codigo) ? "¡Correcto!" : "Revisa la sintaxis: altura = 1.65", regex.test(codigo));
+}
+
+function verificarCodigo1d() {
+  const codigo = document.getElementById("codigoUsuario1d").value;
+  const regex = /^es_estudiante\s*=\s*(True|False)$/m;
+  mostrarResultado("resultado1d", regex.test(codigo) ? "¡Correcto!" : "Revisa la sintaxis: es_estudiante = True", regex.test(codigo));
+}
+
+function verificarCodigo2() {
+  const codigo = document.getElementById("codigoUsuario2").value.trim();
+  const regexCiudad = /^ciudad\s*=\s*\"[a-zA-Z\s]+\"$/m;
+  const regexPrint = /print\(\s*ciudad\s*\)/m;
+  if (regexCiudad.test(codigo) && regexPrint.test(codigo)) {
+    mostrarResultado("resultado2", "¡Muy bien! Has creado e impreso la variable correctamente.", true);
+  } else {
+    mostrarResultado("resultado2", "Verifica que hayas creado la variable 'ciudad' y luego la imprimas con print(ciudad).", false);
+  }
+}
+
+function verificarCodigo3() {
+  const codigo = document.getElementById("codigoUsuario3").value.trim();
+  const regexA = /^a\s*=\s*\d+$/m;
+  const regexB = /^b\s*=\s*\d+$/m;
+  const regexPrint = /print\(\s*a\s*\+\s*b\s*\)/m;
+  const valido = regexA.test(codigo) && regexB.test(codigo) && regexPrint.test(codigo);
+  mostrarResultado("resultado3", valido ? "¡Correcto!" : "Verifica que hayas creado las variables 'a' y 'b' y usado print(a + b).", valido);
+}
+
+function verificarCodigo4() {
+  const codigo = document.getElementById("codigoUsuario4").value.trim();
+  const regexNombre = /^nombre\s*=\s*\"[a-zA-Z\s]+\"$/m;
+  const regexPrintF = /print\(f\".*\{\s*nombre\s*\}.*\"\)/m;
+  if (regexNombre.test(codigo) && regexPrintF.test(codigo)) {
+    mostrarResultado("resultado4", "¡Muy bien! Has usado f-string correctamente.", true);
+  } else {
+    mostrarResultado("resultado4", "Revisa que uses print(f\"Hola, mi nombre es {nombre}\").", false);
+  }
+}
+
+function verificarCodigo5() {
+  const codigo = document.getElementById("codigoUsuario5").value.trim();
+  const regexX = /^x\s*=\s*\d+(\.\d+)?$/m;
+  const regexY = /^y\s*=\s*\d+(\.\d+)?$/m;
+  const regexPrint = /print\(\s*x\s*\*\s*y\s*\)/m;
+  const valido = regexX.test(codigo) && regexY.test(codigo) && regexPrint.test(codigo);
+  mostrarResultado("resultado5", valido ? "¡Correcto!" : "Asegúrate de declarar 'x' y 'y' como números decimales y usar print(x * y).", valido);
+}
+
+function verificarCodigo6() {
+  const codigo = document.getElementById("codigoUsuario6").value.trim();
+  const regexPrecio = /^precio\s*=\s*\d+(\.\d+)?$/m;
+  const regexDesc = /^descuento\s*=\s*\d+(\.\d+)?$/m;
+  const regexPrint = /print\(\s*\".*\{:.2f\}\"\.format\(\s*precio\s*-\s*descuento\s*\)\s*\)/m;
+  const valido = regexPrecio.test(codigo) && regexDesc.test(codigo) && regexPrint.test(codigo);
+  mostrarResultado("resultado6", valido ? "¡Correcto!" : "Revisa que uses format correctamente con la resta precio - descuento.", valido);
+}
+
+function verificarCodigo7() {
+  const codigo = document.getElementById("codigoUsuario7").value.trim();
+  const regexLista = /^frutas\s*=\s*\[\s*\"[a-zA-Z]+\"(\s*,\s*\"[a-zA-Z]+\")*\s*\]$/m;
+  const regexPrint = /print\(\s*frutas\[1\]\s*\)/m;
+  const valido = regexLista.test(codigo) && regexPrint.test(codigo);
+  mostrarResultado("resultado7", valido ? "¡Correcto!" : "Verifica que la lista tenga al menos dos elementos y uses print(frutas[1]).", valido);
+}
+
+function verificarCodigo8() {
+  const codigo = document.getElementById("codigoUsuario8").value.trim();
+  const regexDict = /^persona\s*=\s*\{\s*\"nombre\"\s*:\s*\"[a-zA-Z]+\"\s*,\s*\"edad\"\s*:\s*\d+\s*,\s*\"ciudad\"\s*:\s*\"[a-zA-Z]+\"\s*\}$/m;
+  const regexPrint = /print\(\s*persona\[\"nombre\"\]\s*\)/m;
+  const valido = regexDict.test(codigo) && regexPrint.test(codigo);
+  mostrarResultado("resultado8", valido ? "¡Correcto!" : "Verifica que uses correctamente el diccionario y accedas con print(persona[\"nombre\"]).", valido);
+}
+</script>
+
+</body>
+</html>
+
